@@ -1,6 +1,7 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { UserContext } from "../../../App";
+import { UserContext } from "../../App";
 import axios from "axios";
 
 export default function CreateProfile() {
@@ -15,7 +16,7 @@ export default function CreateProfile() {
     axios.get(`/user/get?email=${email}&password=${password}`)
     .then(res => {
       console.log(res)
-      if(res.data == 200)
+      if(res.data === 200)
         setUser({ loggedIn: true });
       else
         setAlert(true);
@@ -24,7 +25,7 @@ export default function CreateProfile() {
     .catch(err => console.log(err));
   };
 
-  if(contact)
+  if(user.loggedIn)
     return <Navigate  to="/home"/>
 
   return (

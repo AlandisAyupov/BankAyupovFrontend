@@ -1,10 +1,9 @@
 import {
   BrowserRouter,
-  Router,
   Route,
   Routes,
-  Navigate,
 } from "react-router-dom";
+import { createContext, useState, useEffect } from "react";
 import Login from "./pages/Login/login.js";
 import Home from "./pages/Home/home.js";
 

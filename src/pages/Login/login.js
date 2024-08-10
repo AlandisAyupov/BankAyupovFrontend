@@ -7,13 +7,13 @@ import axios from "axios";
 export default function CreateProfile() {
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
-  const { user, setUser } = useContext(UserContext);
+  const {user, setUser} = useContext(UserContext);
   const [alert, setAlert] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Logging in.");
-    axios.get(`/user/get?email=${email}&password=${password}`)
+    axios.get(`/login/get?email=${email}&password=${password}`)
     .then(res => {
       console.log(res)
       if(res.data === 200)

@@ -1,0 +1,30 @@
+/* Header.css */
+
+header {
+    background-color: #c23333; /* Adjust background color as needed */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center content vertically */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  margin-right: 20px;
+}
+
+p {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #4CAF50; /* Adjust button color as needed */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}

@@ -12,9 +12,15 @@ const Home = () => {
     .then(res => {
       console.log(res)
       if(res.data === true)
+      {
+        console.log("user logged in")
         setUser({ loggedIn: true });
+      }
       else 
+      {
+        console.log("user not logged in")
         setUser({ loggedIn: false });
+      }
       }
     )
     .catch(err => console.log(err));

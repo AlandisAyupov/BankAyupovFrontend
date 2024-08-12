@@ -2,11 +2,12 @@ import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../App";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import User from "../../data/User.js";
+import useGetUser from "../../service/useGetUser.js";
+import styles from "./Header.modules.css";
 
 const Header = () => {
   const {user, setUser} = useContext(UserContext);
-  const { userData } = User();
+  const { userData } = useGetUser();
 
   const handleLogout = async (e) => {
     e.preventDefault();
@@ -22,12 +23,18 @@ const Header = () => {
 
   if(!user.loggedIn)
     return <Navigate  to="/"/>
+
+  console.log(userData);
   
   return (
-    <header>
+    <header style={styles}>
       <div className="container">
         <h1>Home</h1>
-        {userData != null && <p>{userData.email}</p>}
+          <div>
+            {userData != null && <p>{userData.firstName}</p>}
+            {userData != null && <p>{userData.lastName}</p>}
+            {userData != null && <p>{userData.email}</p>}
+          </div>
         <button onClick={handleLogout}>Logout</button>
       </div>
     </header>

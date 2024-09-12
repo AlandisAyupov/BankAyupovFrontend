@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../../App";
 import axios from "axios";
+import styles from "./login.modules.css";
 
 export default function CreateProfile() {
   const [password, setPassword] = useState();
@@ -29,7 +30,7 @@ export default function CreateProfile() {
     return <Navigate  to="/home"/>
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center" style={styles}>
       <form className="login" onSubmit={handleSubmit}>
         <h3>Log In</h3>
 

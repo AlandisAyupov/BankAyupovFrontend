@@ -1,11 +1,17 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../App";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/Header/Header";
+import Item from "../../components/Item/Item";
+import useGetItems from "../../service/useGetItems.js";
+import styles from "./home.modules.css";
 
 const Home = () => {
   const { user, setUser } = useContext(UserContext);
+  const { items } = useGetItems();
+  const [image, setImage] = useState([]);
+
   useEffect(() => {
     console.log("Check.");
     axios.get('/login/check')
@@ -25,9 +31,21 @@ const Home = () => {
     )
     .catch(err => console.log(err));
   }, []);
+
   return (
-    <div className="home">
-      <Header />
+    <div>
+      <div className="home" style={styles}>
+        <Header />
+      </div>
+      <div>
+      {items !== null && items.map((item) => {
+        return (
+          <div className="item" key={item.id}>
+            <Item name={item.name} description={item.description} price={item.price} pictureId={item.pictureId}/>
+          </div>
+        )
+      })}
+      </div> 
     </div>
   );
 };

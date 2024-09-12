@@ -6,6 +6,7 @@ import {
 import { createContext, useState, useEffect } from "react";
 import Login from "./pages/Login/login.js";
 import Home from "./pages/Home/home.js";
+import Admin from "./pages/Admin/admin.js";
 
 export const UserContext = createContext();
 
@@ -22,6 +23,9 @@ function App() {
               />
               <Route
                 path="/home" element= {<Home />}
+              />
+              <Route
+                path="/admin" element= {<Admin />}
               />
             </Routes>
           </div>

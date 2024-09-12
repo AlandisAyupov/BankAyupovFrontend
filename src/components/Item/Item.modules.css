@@ -1,0 +1,6 @@
+.display div {
+    background-color: black;
+    flex-direction: column;
+}
+.display p{
+}

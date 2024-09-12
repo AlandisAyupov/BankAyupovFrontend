@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../App";
 import { Navigate } from "react-router-dom";
@@ -29,12 +30,17 @@ const Header = () => {
   return (
     <header style={styles}>
       <div className="container">
-        <h1>Home</h1>
-          <div>
-            {userData != null && <p>{userData.firstName}</p>}
-            {userData != null && <p>{userData.lastName}</p>}
-            {userData != null && <p>{userData.email}</p>}
-          </div>
+        <Link to="/home">
+          <h1>Home</h1>
+        </Link>
+        {userData != null && userData.type == 0 && <Link to="/admin">
+          <h1>Admin</h1>
+        </Link>}
+        <div>
+          {userData != null && <p>{userData.firstName}</p>}
+          {userData != null && <p>{userData.lastName}</p>}
+          {userData != null && <p>{userData.email}</p>}
+        </div>
         <button onClick={handleLogout}>Logout</button>
       </div>
     </header>

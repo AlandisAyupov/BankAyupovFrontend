@@ -1,0 +1,11 @@
+.home button {
+  margin: 10px;
+}
+
+.item div {
+  clear: both;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 100px;
+}

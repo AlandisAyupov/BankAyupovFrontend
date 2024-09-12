@@ -9,7 +9,8 @@ const useGetUser = () => {
             .map(obj => ({
                 email: obj.email, 
                 firstName: obj.firstName, 
-                lastName:obj.lastName, 
+                lastName: obj.lastName, 
+                type: obj.type,
                 address: obj.address, 
                 dateOfBirth: obj.dateOfBirth
             }))[0];

@@ -30,25 +30,31 @@ export default function CreateProfile() {
     return <Navigate  to="/home"/>
 
   return (
-    <div className="flex flex-col items-center justify-center" style={styles}>
+    <div className="div1" style={styles}>
       <form className="login" onSubmit={handleSubmit}>
-        <h3>Log In</h3>
-
-        <label>Email address:</label>
-        <input
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-
-        <button>Log in</button>
-        {alert && <h1>Red</h1>}
+        <div className="div2">
+          <h1>Log In</h1>
+          <div className="div3">
+            <p>Email address:</p>
+            <input
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+          <div className="div3">
+            <p>Password:</p>
+            <input
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+          </div>
+          <div className="div3">
+            <button>Log in</button>
+            {alert && <h1>Red</h1>}
+          </div>
+        </div>
       </form>
     </div>
   );

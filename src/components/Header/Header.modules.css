@@ -1,12 +1,13 @@
 /* Header.css */
 
 header {
-    background-color: #d1bcbc84; /* Adjust background color as needed */
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Center content vertically */
-    margin:0 auto;
-    width:1000px;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  width: 100vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.info {
 }
 
 .container {
@@ -22,6 +23,7 @@ div {
 }
 
 h1 {
+  border: 4%;
   margin-right: 20px;
 }
 
@@ -30,8 +32,9 @@ p {
 }
 
 button {
-  background-color: #4CAF50; /* Adjust button color as needed */
+  background-color: rgb(48, 108, 228);
   color: white;
+  border-radius: 2%;
   padding: 10px 20px;
   border: none;
   cursor: pointer;

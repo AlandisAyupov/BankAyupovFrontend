@@ -9,9 +9,8 @@ const DeleteTable = () => {
     }
 
     return (
-        <dispatchEvent>
+        <div>
             {items !== null && items.map((item) => {
-            
                 return (
                     <div className="item" key={item.id}>
                         <p>{item.name}</p>

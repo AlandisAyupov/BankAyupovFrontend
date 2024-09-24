@@ -33,18 +33,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="parent">
       <div className="home" style={styles}>
         <Header />
       </div>
-      <div>
-      {items !== null && items.map((item) => {
-        return (
-          <div className="item" key={item.id}>
-            <Item name={item.name} description={item.description} price={item.price} pictureId={item.pictureId}/>
-          </div>
-        )
-      })}
+      <div className="items">
+        {items !== null && items.map((item) => {
+          return (
+            <div className="item" key={item.id}>
+              <Item name={item.name} description={item.description} price={item.price} pictureId={item.pictureId}/>
+            </div>
+          )
+        })}
       </div> 
     </div>
   );

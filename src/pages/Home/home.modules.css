@@ -1,11 +1,30 @@
-.home button {
+body {
+  background-color: whitesmoke;
+}
+
+button {
   margin: 10px;
 }
 
-.item div {
+.parent {
+  height: 100vh;
+}
+
+.home {
+  width: 100%;
+  width: 100vw;
+  background-color: #4CAF50; 
+}
+
+.items {
+  height: 100vh;
+}
+
+.item{
   clear: both;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 100px;
+  height: 75px;
 }

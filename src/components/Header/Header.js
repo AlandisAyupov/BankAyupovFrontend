@@ -36,7 +36,7 @@ const Header = () => {
         {userData != null && userData.type == 0 && <Link to="/admin">
           <h1>Admin</h1>
         </Link>}
-        <div>
+        <div className="info">
           {userData != null && <p>{userData.firstName}</p>}
           {userData != null && <p>{userData.lastName}</p>}
           {userData != null && <p>{userData.email}</p>}

@@ -1,10 +1,17 @@
 import useGetItems from "../../service/useGetItems.js";
-import {BsFillPencilFill } from "react-icons/bs";
+import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 import styles from "./EditTable.modules.css"
+
+import axios from "axios";
 
 const EditTable = ({ editRow }) => 
 {
     const { items } = useGetItems();
+
+    const deleteItem = (id) => {
+        console.log(`Delete ${id}`);
+        axios.delete(`/item/delete?id=${id}`);
+    }
 
     return (
         <div className="table-wrapper" style={styles}>
@@ -26,6 +33,10 @@ const EditTable = ({ editRow }) =>
                                 <td>{item.price}</td>
                                 <td className="fit">
                                     <span className="actions">
+                                        <BsFillTrashFill
+                                        className="delete-btn"
+                                        onClick={() => deleteItem(item.id)}
+                                        />
                                         <BsFillPencilFill
                                         className="edit-btn"
                                         onClick={() => editRow(idx)}
